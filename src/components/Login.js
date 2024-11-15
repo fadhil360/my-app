@@ -1,12 +1,14 @@
-// src/components/Login.js
 import React, { useState } from 'react';
 import { signInWithEmailAndPassword } from '../firebase';
 import { auth } from '../firebase';
+import { useNavigate } from 'react-router-dom';  // Import useNavigate
 
 const Login = ({ setUser }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+
+  const navigate = useNavigate();  // Initialize useNavigate
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -16,6 +18,11 @@ const Login = ({ setUser }) => {
     } catch (error) {
       setError(error.message);
     }
+  };
+
+  // Navigate to the sign up page
+  const goToSignUp = () => {
+    navigate('/signup');
   };
 
   return (
@@ -39,6 +46,9 @@ const Login = ({ setUser }) => {
         <button type="submit">Login</button>
       </form>
       {error && <p>{error}</p>}
+      
+      {/* Button to navigate to the signup page */}
+      <button onClick={goToSignUp}>Go to Sign Up</button>
     </div>
   );
 };
