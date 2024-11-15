@@ -1,5 +1,5 @@
-import { BrowserRouter } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { auth } from './firebase';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
@@ -14,8 +14,7 @@ const App = () => {
   }, []);
 
   return (
-
-
+    
     <Router>
       <div>
         <h1>Welcome to the Virtual Lab</h1>
