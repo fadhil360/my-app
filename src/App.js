@@ -14,8 +14,7 @@ const App = () => {
   }, []);
 
   return (
-    
-    <Router>
+    <BrowserRouter basename="/repository-name">
       <div>
         <h1>Welcome to the Virtual Lab</h1>
         <Routes>
@@ -25,7 +24,7 @@ const App = () => {
           <Route path="/" element={<Navigate to="/login" />} />
         </Routes>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 };
 
