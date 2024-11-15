@@ -9,7 +9,8 @@ const Login = ({ setUser }) => {
   const [error, setError] = useState('');
 
   const navigate = useNavigate();  // Initialize useNavigate
-
+ 
+  
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
